@@ -41,3 +41,26 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+
+# modding files
+# =========================
+forge-1.7.10-10.13.4.1448-1.7.10-changelog.txt
+forge-1.7.10-10.13.4.1448-1.7.10-src.zip
+/eclipse
+/build
+/bin
+/.settings
+/.gradle
+/gradle
+gradlew.file
+gradlew.bat
+MinecraftForge-Credits.txt
+MinecraftForge-License.txt
+README.txt
+LICENSE-fml.txt
+CREDITS-fml.txt
+.project
+.classpath
+build.gradle
+/.metadata
