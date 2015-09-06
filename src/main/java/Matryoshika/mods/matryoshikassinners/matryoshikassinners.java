@@ -50,12 +50,12 @@ import net.minecraftforge.common.MinecraftForge;
 	@Mod.Instance
 	public static matryoshikassinners instance;
 	
-	//public static final Enchantment purify = new EnchantmentPurify(83, 1);
-	//public static Potion potionsSinnersDelight;
+	public static final Enchantment purify = new EnchantmentPurify(83, 1);
+	public static Potion potionsSinnersDelight;
 	
-	//public static worldGenAltar worldGen = new worldGenAltar();
+	public static worldGenAltar worldGen = new worldGenAltar();
 	
-	//matryoshikaEventHandler events = new matryoshikaEventHandler();
+	matryoshikaEventHandler events = new matryoshikaEventHandler();
 	
 	
 	@SidedProxy(clientSide="Matryoshika.mods.matryoshikassinners.ClientProxy",serverSide="Matryoshika.mods.matryoshikassinners.CommonProxy")
@@ -65,8 +65,8 @@ import net.minecraftforge.common.MinecraftForge;
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event){
-		//matryoshikassinners_Items.registerItems();
-		//matryoshikassinners_Blocks.registerBlocks();
+		matryoshikassinners_Items.registerItems();
+		matryoshikassinners_Blocks.registerBlocks();
 		
 	}
 	
@@ -74,25 +74,25 @@ import net.minecraftforge.common.MinecraftForge;
 	
 	@EventHandler
 	public void Init(FMLInitializationEvent event){
-		//MinecraftForge.EVENT_BUS.register(new matryoshikaEventHandler());
-		//proxy.registerRenderers();
-		//proxy.registerEntities();
+		MinecraftForge.EVENT_BUS.register(new matryoshikaEventHandler());
+		proxy.registerRenderers();
+		proxy.registerEntities();
 
 		
 		//Register entities
-		//matryoshikassinners_Entities.registerEntities(EntityAcedia.class, "Acedia");
-		//matryoshikassinners_Entities.registerEntities(EntityAvaritia.class, "Avaritia");
-		//matryoshikassinners_Entities.registerEntities(EntityGula.class, "Gula");
-		//matryoshikassinners_Entities.registerEntities(EntityInvidia.class, "Invidia");
-		//matryoshikassinners_Entities.registerEntities(EntityIra.class, "Ira");
-		//matryoshikassinners_Entities.registerEntities(EntityLuxuria.class, "Luxuria");
-		//matryoshikassinners_Entities.registerEntities(EntitySuperbia.class, "Superbia");
+		matryoshikassinners_Entities.registerEntities(EntityAcedia.class, "Acedia");
+		matryoshikassinners_Entities.registerEntities(EntityAvaritia.class, "Avaritia");
+		matryoshikassinners_Entities.registerEntities(EntityGula.class, "Gula");
+		matryoshikassinners_Entities.registerEntities(EntityInvidia.class, "Invidia");
+		matryoshikassinners_Entities.registerEntities(EntityIra.class, "Ira");
+		matryoshikassinners_Entities.registerEntities(EntityLuxuria.class, "Luxuria");
+		matryoshikassinners_Entities.registerEntities(EntitySuperbia.class, "Superbia");
 		
-		//potionsSinnersDelight = new SinnersDelight(28, true, 0).setIconIndex(0,0).setPotionName("Sinners Delight");
+		potionsSinnersDelight = new SinnersDelight(28, true, 0).setIconIndex(0,0).setPotionName("Sinners Delight");
 
-		//GameRegistry.registerTileEntity(Matryoshika.mods.matryoshikassinners.tile.TileEntityMatryoshikaBrain.class, "MatryoshikaBrain");
+		GameRegistry.registerTileEntity(Matryoshika.mods.matryoshikassinners.tile.TileEntityMatryoshikaBrain.class, "MatryoshikaBrain");
 		
-		//GameRegistry.registerWorldGenerator(worldGen, 33);
+		GameRegistry.registerWorldGenerator(worldGen, 33);
 	}
 	
 	@EventHandler

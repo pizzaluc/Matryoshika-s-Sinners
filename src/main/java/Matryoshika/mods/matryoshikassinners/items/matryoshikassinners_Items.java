@@ -52,7 +52,7 @@ public class matryoshikassinners_Items {
 			
 			
 		ItemStack SinDagger = new ItemStack(matryoshikassinners_Items.SinDagger );
-		//SinDagger.addEnchantment(matryoshikassinners.purify, 1);
+		SinDagger.addEnchantment(matryoshikassinners.purify, 1);
 		GameRegistry.addShapelessRecipe(SinDagger, new Object[]
 				{
 					Items.flint, 
