@@ -20,6 +20,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.ChatComponentTranslation;
+import net.minecraft.util.ChatStyle;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.IIcon;
@@ -64,8 +66,9 @@ public class ItemSoulCrucible extends Item{
 		 }
 		
 	}
-	@SideOnly(Side.CLIENT)
 	public ItemStack onItemRightClick(ItemStack bowl, World world, EntityPlayer player){
+		
+		ChatComponentTranslation chatComponent;
 		
 		if (!bowl.hasTagCompound()) {
 			bowl.setTagCompound(new NBTTagCompound());
@@ -73,6 +76,11 @@ public class ItemSoulCrucible extends Item{
 		if (!bowl.getTagCompound().hasKey("amount")) {
 			bowl.getTagCompound().setInteger("amount", 0);
 			}
+		
+		if(bowl.stackTagCompound.getInteger("amount") >= 100 && world.isRemote == false){
+			chatComponent = (ChatComponentTranslation) new ChatComponentTranslation("This Crucible has been filled.").setChatStyle(new ChatStyle().setColor(EnumChatFormatting.DARK_RED));
+			player.addChatComponentMessage(chatComponent);
+		}
 		
 		if(bowl.stackTagCompound.getInteger("amount") <= 100){
 			if(player.inventory.hasItem(matryoshikassinners_Items.VillagerSoul)){
@@ -98,6 +106,13 @@ public class ItemSoulCrucible extends Item{
 				int amount = bowl.stackTagCompound.getInteger("amount");
 				bowl.stackTagCompound.setInteger("amount", amount+1);
 				return bowl;
+				
+			}
+			else{
+				if(world.isRemote == false){
+					chatComponent = (ChatComponentTranslation) new ChatComponentTranslation("Currently holds: " + bowl.stackTagCompound.getInteger("amount") + " Soul-fragments").setChatStyle(new ChatStyle().setColor(EnumChatFormatting.DARK_RED));
+					player.addChatComponentMessage(chatComponent);
+				}
 			}
 		}
 
