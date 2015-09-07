@@ -62,7 +62,7 @@ public class EntityIra extends EntityMob implements IBossDisplayData{
 		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.7);
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(MAX_HP);
 		this.getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setBaseValue(1.0);
-		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(1D);
+		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(50D);
 	}
 	
 	public boolean isAIEnabled(){
