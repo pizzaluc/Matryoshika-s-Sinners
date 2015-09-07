@@ -17,6 +17,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.ChatStyle;
 import net.minecraft.util.EnumChatFormatting;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 
@@ -83,6 +84,17 @@ public class matryoshikaEventHandler {
 			}
 			float shouldHurt = event.ammount;
 			event.ammount = shouldHurt * 0.2F;
+		}
+	}
+	@SubscribeEvent
+	public void regenOnHit (LivingAttackEvent event){
+		if(event.source.getSourceOfDamage() instanceof EntityIra && event.entity instanceof EntityPlayer){
+			EntityIra ira = (EntityIra) event.source.getSourceOfDamage();
+			float currentHealth = ira.getHealth();
+			float maxHealth = ira.getMaxHealth();
+			if(currentHealth < maxHealth){
+				ira.setHealth(currentHealth*1.1F);
+			}
 		}
 	}
 }

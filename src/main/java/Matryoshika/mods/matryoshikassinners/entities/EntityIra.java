@@ -27,7 +27,7 @@ import net.minecraft.world.World;
 
 public class EntityIra extends EntityMob implements IBossDisplayData{
 	
-	private static final float MAX_HP = 300F;
+	private static final float MAX_HP = 500F;
 	
 	public EntityIra(World world)
     {
@@ -59,10 +59,10 @@ public class EntityIra extends EntityMob implements IBossDisplayData{
 	@Override
 	protected void applyEntityAttributes() {
 		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.4);
+		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.7);
 		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(MAX_HP);
 		this.getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setBaseValue(1.0);
-		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(100D);
+		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(1D);
 	}
 	
 	public boolean isAIEnabled(){
