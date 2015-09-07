@@ -120,7 +120,14 @@ public class ItemSoulCrucible extends Item{
 		
 		
 	}
-	
-		
+	@Override
+	public boolean hasEffect(ItemStack stack){
+		if(stack.hasTagCompound() == true && stack.stackTagCompound.getInteger("amount") >= 100){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
 }
 
