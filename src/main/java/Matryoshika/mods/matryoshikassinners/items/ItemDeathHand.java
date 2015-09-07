@@ -1,6 +1,7 @@
 package Matryoshika.mods.matryoshikassinners.items;
 
 import java.util.List;
+import java.util.Random;
 
 import Matryoshika.mods.matryoshikassinners.matryoshikassinners;
 import Matryoshika.mods.matryoshikassinners.blocks.altars.PaganAltar;
@@ -34,7 +35,7 @@ public class ItemDeathHand extends ItemSword {
 		this.maxStackSize = 1;
 		
 		this.setUnlocalizedName("ItemDeathHand");
-		this.setTextureName(matryoshikassinners.MODID+":DeathHand");
+		this.setTextureName(matryoshikassinners.MODID+":AltarDagger");
 	}
 	
 	@Override
@@ -70,9 +71,18 @@ public class ItemDeathHand extends ItemSword {
             double posX = base1.posX;
             double posY = base1.posY;
             double posZ = base1.posZ;
+            float f = 1.0F;
+            float f1 = (f * 0.7F) + 0.3F;
+            float f2 = (f * (f * 0.6F)) - 0.6F;
+            float f3 = (f * (f * 0.4F)) - 0.7F;
+            Random rand = new Random();
+            int randomNum = rand.nextInt(100) + 1;
             
             base1.setHealth(-1);
-            base1.worldObj.addWeatherEffect(new EntityLightningBolt(base1.worldObj, posX, posY, posZ));
+            if(randomNum <= 5){
+            	base1.worldObj.addWeatherEffect(new EntityLightningBolt(base1.worldObj, posX, posY, posZ));
+            }
+            base1.worldObj.playSoundAtEntity(base1, "fireworks.largeBlast_far", 3F, 0.1F);
             base1.onDeath(DamageSource.generic);
             
             if(soulFragment == 1){
