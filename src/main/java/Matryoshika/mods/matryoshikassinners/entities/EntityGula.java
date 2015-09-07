@@ -72,7 +72,7 @@ public class EntityGula extends EntityMob implements IBossDisplayData{
 	        	if(this.getHealth() < MAX_HP*0.2){
 	        		regen = true;
 	        	}
-	        	if(regen == false){
+	        	if(regen == true){
 	        		lookForBlock();
 	        		super.onEntityUpdate();
 	        	}
