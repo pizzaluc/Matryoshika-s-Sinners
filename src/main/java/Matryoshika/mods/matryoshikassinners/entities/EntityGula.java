@@ -33,8 +33,7 @@ import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 
 public class EntityGula extends EntityMob implements IBossDisplayData{
 	
-	public EntityGula(World world)
-    {
+	public EntityGula(World world){
         super(world);
         setSize(1,2);
         this.isImmuneToFire = true;
