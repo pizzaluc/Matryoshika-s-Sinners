@@ -15,6 +15,10 @@ matryoshikabrain.name=Matryoshika Brain
 item.ItemSinDagger.name=Dagger of Sin
 item.ItemDeathHand.name=Hand of Death
 item.ItemSoulCrucible.name=Crucible of Souls
+item.ItemZombieSoul.name=Soul of the Zombie
+item.ItemVillagerSoul.name=Soul of the Villager
+item.ItemBuffMobSoul.name=Soul of the Dark One
+item.ItemAnimalSoul.name=Soul of the Innocent One
 
 //set all enchant names
 enchantment.purify=Purify
