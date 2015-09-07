@@ -1,5 +1,7 @@
 package Matryoshika.mods.matryoshikassinners.utils;
 
+import java.util.Random;
+
 import Matryoshika.mods.matryoshikassinners.entities.EntityAcedia;
 import Matryoshika.mods.matryoshikassinners.entities.EntityAvaritia;
 import Matryoshika.mods.matryoshikassinners.entities.EntityGula;
@@ -10,10 +12,17 @@ import Matryoshika.mods.matryoshikassinners.entities.EntitySuperbia;
 import Matryoshika.mods.matryoshikassinners.items.matryoshikassinners_Items;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ChatComponentTranslation;
+import net.minecraft.util.ChatStyle;
+import net.minecraft.util.EnumChatFormatting;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 
 public class matryoshikaEventHandler {
+	
+	ChatComponentTranslation chatComponent;
 	
 	
 	@SubscribeEvent
@@ -46,5 +55,34 @@ public class matryoshikaEventHandler {
 			{
 				return;
 			}
+	}
+	@SubscribeEvent
+	public void  killProjectiles (LivingHurtEvent event){
+		Entity victim = event.entityLiving;
+		Random rand = new Random();
+        int randomNum = rand.nextInt(5) + 1;
+		if(victim instanceof EntitySuperbia){
+			if(randomNum == 1){
+				chatComponent = (ChatComponentTranslation) new ChatComponentTranslation("You believe you can hurt Me?").setChatStyle(new ChatStyle().setColor(EnumChatFormatting.GOLD));
+			}
+			if(randomNum == 2){
+				chatComponent = (ChatComponentTranslation) new ChatComponentTranslation("Die you fool!").setChatStyle(new ChatStyle().setColor(EnumChatFormatting.GOLD));
+			}
+			if(randomNum == 3){
+				chatComponent = (ChatComponentTranslation) new ChatComponentTranslation("You are so disrespectful!").setChatStyle(new ChatStyle().setColor(EnumChatFormatting.GOLD));
+			}
+			if(randomNum == 4){
+				chatComponent = (ChatComponentTranslation) new ChatComponentTranslation("Kneel to me, peasant!").setChatStyle(new ChatStyle().setColor(EnumChatFormatting.GOLD));
+			}
+			if(randomNum == 5){
+				chatComponent = (ChatComponentTranslation) new ChatComponentTranslation("You are more idiotic than you look.").setChatStyle(new ChatStyle().setColor(EnumChatFormatting.GOLD));
+			}
+			((EntityPlayer) event.source.getEntity()).addChatComponentMessage(chatComponent);
+			if(event.source.isProjectile()){
+				event.setCanceled(true);
+			}
+			float shouldHurt = event.ammount;
+			event.ammount = shouldHurt * 0.2F;
+		}
 	}
 }
