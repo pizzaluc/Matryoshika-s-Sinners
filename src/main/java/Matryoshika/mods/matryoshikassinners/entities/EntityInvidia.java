@@ -36,7 +36,7 @@ import net.minecraft.world.World;
 public class EntityInvidia extends EntityMob implements IBossDisplayData{
 	
 	private static final float MAX_HP = 500F;
-	private static final double RANGE = 20F;
+	private static final double RANGE = 5F;
 	
 	public EntityInvidia(World world)
     {
