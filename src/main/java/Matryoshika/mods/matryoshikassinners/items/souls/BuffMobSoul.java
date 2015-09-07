@@ -14,13 +14,17 @@ public class BuffMobSoul extends Item{
 		super();
 		this.maxStackSize = 16;
 		this.setUnlocalizedName("ItemBuffMobSoul");
-		this.setTextureName(matryoshikassinners.MODID+":BuffMobSoul");
+		this.setTextureName(matryoshikassinners.MODID+":soul");
 	}
 	
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par){
 		list.add(EnumChatFormatting.DARK_GRAY + "The unstable powers in this soul grant");
 		list.add(EnumChatFormatting.DARK_GRAY + "a bit more power than other foes'...");
+	}
+	@Override
+	public boolean hasEffect(ItemStack stack){
+		return true;
 	}
 
 }

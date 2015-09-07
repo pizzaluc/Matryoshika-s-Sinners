@@ -14,12 +14,16 @@ public class AnimalSoul extends Item{
 		super();
 		this.maxStackSize = 16;
 		this.setUnlocalizedName("ItemAnimalSoul");
-		this.setTextureName(matryoshikassinners.MODID+":AnimalSoul");
+		this.setTextureName(matryoshikassinners.MODID+":soul");
 	}
 	
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer player, List list, boolean par){
 		list.add(EnumChatFormatting.DARK_GRAY + "Belonged to an innocent but undeveloped soul...");
+	}
+	@Override
+	public boolean hasEffect(ItemStack stack){
+		return true;
 	}
 
 }
