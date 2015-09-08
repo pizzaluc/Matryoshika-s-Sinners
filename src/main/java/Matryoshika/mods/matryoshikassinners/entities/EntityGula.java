@@ -26,11 +26,6 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 
-
-
-
-
-
 public class EntityGula extends EntityMob implements IBossDisplayData{
 	
 	public EntityGula(World world){
@@ -74,22 +69,21 @@ public class EntityGula extends EntityMob implements IBossDisplayData{
 	        	}
 	        	if(regen == true){
 	        		lookForBlock();
-	        		super.onEntityUpdate();
+	        		
 	        	}
 	        	if(this.getHealth() == MAX_HP){
 	        		regen = false;	
+	        	}
+	        	if(this.getHealth() >= 1){
+	        		for (EntityItem entityItem : inbox){
+	        			vacuumItems(this);
+	    	    }
 	        }
-	        if(this.getHealth() >= 1){
-	        	for (EntityItem entityItem : inbox){
-	    	        vacuumItems(this);
-	    	        super.onEntityUpdate();
-	    	        }
-	        }
-	        
 		}
 		else {
 			return;
-		}super.onEntityUpdate();
+		}
+		super.onEntityUpdate();
     }
 	
 	@Override
@@ -134,7 +128,7 @@ public class EntityGula extends EntityMob implements IBossDisplayData{
                     	worldObj.setBlockToAir(bX, bY, bZ);
                     	worldObj.markBlockForUpdate(bX, bY, bZ);
                     	if(this.getHealth() < MAX_HP){
-                    		this.heal(4F);
+                    		this.heal(50F);
                     		}
                 	}
                 	else{
