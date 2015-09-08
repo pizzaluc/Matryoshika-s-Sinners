@@ -98,22 +98,22 @@ public class EntityAvaritia extends EntityMob implements IBossDisplayData{
 				
 				if(random1 == 1 && counter >= 20 && !worldObj.isRemote){
 					if(random2 == 1 && entityPlayer.getCurrentArmor(0) != null){
-						ItemStack helm = entityPlayer.getHeldItem().copy();
+						ItemStack helm = entityPlayer.getCurrentArmor(0).copy();
 						entityPlayer.setCurrentItemOrArmor(1, null);
 						entityPlayer.entityDropItem(helm, 1);
 					}
 					if(random2 == 2 && entityPlayer.getCurrentArmor(1) != null){
-						ItemStack torso = entityPlayer.getHeldItem().copy();
+						ItemStack torso = entityPlayer.getCurrentArmor(1).copy();
 						entityPlayer.setCurrentItemOrArmor(2, null);
 						entityPlayer.entityDropItem(torso, 1);
 					}
 					if(random2 == 3 && entityPlayer.getCurrentArmor(2) != null){
-						ItemStack leggings = entityPlayer.getHeldItem().copy();
+						ItemStack leggings = entityPlayer.getCurrentArmor(2).copy();
 						entityPlayer.setCurrentItemOrArmor(3, null);
 						entityPlayer.entityDropItem(leggings, 1);
 					}
 					if(random2 == 4 && entityPlayer.getCurrentArmor(3) != null){
-						ItemStack boots = entityPlayer.getHeldItem().copy();
+						ItemStack boots = entityPlayer.getCurrentArmor(3).copy();
 						entityPlayer.setCurrentItemOrArmor(4, null);
 						entityPlayer.entityDropItem(boots, 1);
 					}
