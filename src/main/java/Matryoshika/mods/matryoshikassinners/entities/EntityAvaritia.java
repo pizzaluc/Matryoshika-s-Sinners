@@ -34,7 +34,7 @@ import net.minecraft.world.World;
 
 public class EntityAvaritia extends EntityMob implements IBossDisplayData{
 	
-	private static final float MAX_HP = 300F;
+	private static final float MAX_HP = 500F;
 	private static final double RANGE = 5F;
 	private int counter;
 	
