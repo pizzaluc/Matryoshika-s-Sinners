@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import Matryoshika.mods.matryoshikassinners.blocks.BlockMatryoshikaBrain;
+import Matryoshika.mods.matryoshikassinners.blocks.multiblocks.MultiblockCheck;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -21,7 +22,7 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 
-public class TileEntityMatryoshikaBrain extends TileEntity implements IInventory {
+public class TileEntityMatryoshikaBrain extends TileEntity implements IInventory{
 	
 	private ItemStack[] chestContents = new ItemStack[108];
 	private String customName;
