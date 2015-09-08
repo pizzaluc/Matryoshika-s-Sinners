@@ -9,9 +9,11 @@ import Matryoshika.mods.matryoshikassinners.entities.EntityInvidia;
 import Matryoshika.mods.matryoshikassinners.entities.EntityIra;
 import Matryoshika.mods.matryoshikassinners.entities.EntityLuxuria;
 import Matryoshika.mods.matryoshikassinners.entities.EntitySuperbia;
+import Matryoshika.mods.matryoshikassinners.entities.matryoshikassinners_Entities;
 import Matryoshika.mods.matryoshikassinners.items.matryoshikassinners_Items;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentTranslation;
@@ -94,6 +96,30 @@ public class matryoshikaEventHandler {
 			float maxHealth = ira.getMaxHealth();
 			if(currentHealth < maxHealth){
 				ira.setHealth(currentHealth*1.1F);
+			}
+			else{
+				return;
+			}
+		}
+	}
+	@SubscribeEvent
+	public void armorBuff (LivingHurtEvent event){
+		Entity victim = event.entityLiving;
+		if(victim instanceof EntityGula){
+			boolean invulnerable;
+			if(((EntityLivingBase) victim).getHealth() <= (((EntityLivingBase) victim).getMaxHealth() * 0.2)){
+				invulnerable = true;
+			}
+			if(((EntityLivingBase) victim).getHealth() >= (((EntityLivingBase) victim).getMaxHealth() * 0.99)){
+				invulnerable = false;
+			}
+			else{
+				invulnerable = false;
+			}
+			if(invulnerable == true){
+				float shouldHurt = event.ammount;
+				event.ammount = shouldHurt * 0.2F;
+				
 			}
 		}
 	}
