@@ -35,7 +35,7 @@ public class ItemDeathHand extends ItemSword {
 		this.maxStackSize = 1;
 		
 		this.setUnlocalizedName("ItemDeathHand");
-		this.setTextureName(matryoshikassinners.MODID+":AltarDagger");
+		this.setTextureName(matryoshikassinners.MODID+":sickle");
 	}
 	
 	@Override
