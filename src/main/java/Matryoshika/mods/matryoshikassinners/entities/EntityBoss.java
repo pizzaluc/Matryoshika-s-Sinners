@@ -110,7 +110,7 @@ public class EntityBoss extends EntityMob implements IBossDisplayData {
 	
 	protected Entity findPlayerToAttack()
     {
-            double d0 = 16.0D;
+            double d0 = 25.0D;
             return this.worldObj.getClosestVulnerablePlayerToEntity(this, d0);
     }
 
