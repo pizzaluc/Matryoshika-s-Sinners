@@ -26,37 +26,15 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 
-public class EntityGula extends EntityMob implements IBossDisplayData{
+public class EntityGula extends EntityBoss{
 	
 	public EntityGula(World world){
         super(world);
-        setSize(1,2);
-        this.isImmuneToFire = true;
-        preventEntitySpawning = true;
-        getNavigator().setCanSwim(true);
-        this.tasks.addTask(0, new EntityAISwimming(this));
-        this.tasks.addTask(1, new EntityAIAttackOnCollide(this, EntityPlayer.class, 1.0D, false));
-        this.tasks.addTask(2, new EntityAIMoveTowardsRestriction(this, 1.0D));
-        this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
-        this.tasks.addTask(4, new EntityAILookIdle(this));
-        this.targetTasks.addTask(1, new EntityAIHurtByTarget(this, true));
-        this.targetTasks.addTask(2, new EntityAINearestAttackableTarget(this, EntityPlayer.class, 0, true));
     }
-	public EntityGula(World world, double x, double y, double z){
-		this(world);
-		setPosition(x,y,z);		
-	}
-	
-	private static final float MAX_HP = 500F;
 	private static final double RANGE = 20F;
 	static Random random = new Random();
 	public boolean regen;
 	private World world;
-	
-	public int getMaxSpawnedInChunk()
-    {
-        return 1;
-    }
     
 	@Override
 	public void onEntityUpdate(){
@@ -64,14 +42,14 @@ public class EntityGula extends EntityMob implements IBossDisplayData{
 			AxisAlignedBB box = this.boundingBox.expand(RANGE, RANGE, RANGE);
 			Class<EntityItem> items = EntityItem.class;
 			List<EntityItem> inbox = this.worldObj.getEntitiesWithinAABB(items, box);
-	        	if(this.getHealth() < MAX_HP*0.2){
+	        	if(this.getHealth() < this.getMaxHealth()*0.2){
 	        		regen = true;
 	        	}
 	        	if(regen == true){
 	        		lookForBlock();
 	        		
 	        	}
-	        	if(this.getHealth() == MAX_HP){
+	        	if(this.getHealth() == this.getMaxHealth()){
 	        		regen = false;	
 	        	}
 	        	if(this.getHealth() >= 1){
@@ -86,26 +64,6 @@ public class EntityGula extends EntityMob implements IBossDisplayData{
 		super.onEntityUpdate();
     }
 	
-	@Override
-	protected boolean canDespawn() {
-		return false;
-	}
-	
-	
-	
-	@Override
-	protected void applyEntityAttributes() {
-		super.applyEntityAttributes();
-		this.getEntityAttribute(SharedMonsterAttributes.movementSpeed).setBaseValue(0.4);
-		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(MAX_HP);
-		this.getEntityAttribute(SharedMonsterAttributes.knockbackResistance).setBaseValue(1.0);
-		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(100D);
-	}
-	
-	public boolean isAIEnabled(){
-
-		return true;
-	}
 	private void lookForBlock(){
 		Random random = worldObj.rand;
 		int restartLook = 0;
@@ -127,8 +85,8 @@ public class EntityGula extends EntityMob implements IBossDisplayData{
                 		block.dropBlockAsItem(worldObj, bX, bY, bZ, 0, 0);
                     	worldObj.setBlockToAir(bX, bY, bZ);
                     	worldObj.markBlockForUpdate(bX, bY, bZ);
-                    	if(this.getHealth() < MAX_HP){
-                    		this.heal(50F);
+                    	if(this.getHealth() < this.getMaxHealth()){
+                    		this.heal(10F);
                     		}
                 	}
                 	else{
