@@ -33,6 +33,7 @@ import net.minecraft.world.World;
 
 
 public class EntityAvaritia extends EntityBoss{
+
 	private static final double RANGE = 5F;
 	private int counter;
 	
@@ -40,6 +41,7 @@ public class EntityAvaritia extends EntityBoss{
         super(world);
         
     }
+
 	@Override
 	public void onEntityUpdate(){
 		stealItems(this);
