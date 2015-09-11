@@ -32,14 +32,14 @@ import net.minecraft.util.IChatComponent;
 import net.minecraft.world.World;
 
 
-public class EntityLuxuria extends EntityMob implements IBossDisplayData{
-	
+public class EntityLuxuria extends EntityBoss{
+
 	private static final double RANGE = 5F;
 	private int timer;
 	private int regen;
 	private int teleport;
 	public boolean meeting;
-	
+
 	public EntityLuxuria(World world) {
         super(world);
     }
