@@ -32,7 +32,7 @@ import net.minecraft.world.World;
 
 
 public class EntityAcedia extends EntityBoss{
-	
+
 	private static final double RANGE = 20F;
 	private int timer;
 	
