@@ -31,11 +31,12 @@ public class EntityGula extends EntityBoss{
 	public EntityGula(World world){
         super(world);
     }
+
 	private static final double RANGE = 20F;
 	static Random random = new Random();
 	public boolean regen;
 	private World world;
-    
+   
 	@Override
 	public void onEntityUpdate(){
 		if(this instanceof EntityGula){
