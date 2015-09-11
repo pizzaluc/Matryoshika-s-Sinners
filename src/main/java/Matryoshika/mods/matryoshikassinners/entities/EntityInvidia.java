@@ -40,7 +40,7 @@ public class EntityInvidia extends EntityBoss{
 	public EntityInvidia(World world){
         super(world);
     }
-	
+
 	@Override
 	public void onEntityUpdate(){
 		copyPlayer(this);
