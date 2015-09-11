@@ -26,7 +26,7 @@ import net.minecraft.world.World;
 
 
 public class EntityIra extends EntityBoss{
-	
+
 	public EntityIra(World world){
         super(world);
     }
