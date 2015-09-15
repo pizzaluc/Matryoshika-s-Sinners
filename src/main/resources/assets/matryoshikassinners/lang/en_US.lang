@@ -26,3 +26,5 @@ enchantment.purify=Purify
 //Lore
 lore.deathhand.desc1=Demonic energies flow forth...
 
+//Generator
+tile.BlockDynamicGenerator.name=Dynamic Generator
