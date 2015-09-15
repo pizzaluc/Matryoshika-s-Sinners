@@ -18,7 +18,7 @@ public class matryoshikassinners_Entities {
 		int subColor = random.nextInt() * 16777215;
 		
 		EntityRegistry.registerGlobalEntityID(entityClass, name, entityId);
-		EntityRegistry.registerModEntity(entityClass, name, entityId, matryoshikassinners.instance, 64, 1, true);
+		EntityRegistry.registerModEntity(entityClass, name, entityId, matryoshikassinners.MODID, 64, 1, true);
 		EntityList.entityEggs.put(Integer.valueOf(entityId), new EntityList.EntityEggInfo(entityId, mainColor, subColor));
 		
 	}
