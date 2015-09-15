@@ -1,4 +1,4 @@
-package Matryoshika.mods.matryoshikassinners.blocks;
+package Matryoshika.mods.matryoshikassinners.blocks.sinblocks;
 
 import Matryoshika.mods.matryoshikassinners.matryoshikassinners;
 import net.minecraft.block.Block;

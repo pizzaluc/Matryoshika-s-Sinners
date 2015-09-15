@@ -1,18 +1,18 @@
-package Matryoshika.mods.matryoshikassinners.blocks;
+package Matryoshika.mods.matryoshikassinners.blocks.sinblocks;
 
 import Matryoshika.mods.matryoshikassinners.matryoshikassinners;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
-public class BlockAcedia extends Block {
+public class BlockInvidia extends Block {
 	
-	public BlockAcedia (Block BlockAcedia){
+	public BlockInvidia (Block BlockInvidia){
 		super(Material.glass);
 		setStepSound(soundTypeGlass);
-		setBlockTextureName(matryoshikassinners.MODID+":BlockAcedia");
+		setBlockTextureName(matryoshikassinners.MODID+":BlockInvidia");
 		setHardness(10);
 		this.setResistance(150);
-		this.setBlockName("BlockAcedia");
+		this.setBlockName("BlockInvidia");
 	}
 
 }

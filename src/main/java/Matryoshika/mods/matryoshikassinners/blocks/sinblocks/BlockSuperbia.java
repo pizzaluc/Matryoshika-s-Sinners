@@ -1,9 +1,8 @@
-package Matryoshika.mods.matryoshikassinners.blocks;
+package Matryoshika.mods.matryoshikassinners.blocks.sinblocks;
 
 import java.util.Random;
 
 import Matryoshika.mods.matryoshikassinners.matryoshikassinners;
-import Matryoshika.mods.matryoshikassinners.tile.TileEntityMatryoshikaBrain;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.item.EntityItem;

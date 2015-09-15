@@ -1,18 +1,18 @@
-package Matryoshika.mods.matryoshikassinners.blocks;
+package Matryoshika.mods.matryoshikassinners.blocks.sinblocks;
 
 import Matryoshika.mods.matryoshikassinners.matryoshikassinners;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
-public class BlockGula extends Block {
+public class BlockLuxuria extends Block {
 	
-	public BlockGula (Block BlockGula){
+	public BlockLuxuria (Block BlockLuxuria){
 		super(Material.glass);
 		setStepSound(soundTypeGlass);
-		setBlockTextureName(matryoshikassinners.MODID+":BlockGula");
+		setBlockTextureName(matryoshikassinners.MODID+":BlockLuxuria");
 		setHardness(10);
 		this.setResistance(150);
-		this.setBlockName("BlockGula");
+		this.setBlockName("BlockLuxuria");
 	}
 
 }
