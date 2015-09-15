@@ -35,6 +35,7 @@ public class matryoshikassinners_Items {
 	public static Item ZombieSoul;
 	public static Item AnimalSoul;
 	public static Item BuffMobSoul;
+	public static Item SoulVortex;
 	
 	public static List<Item>ItemList=new ArrayList<Item>();
 	
@@ -46,6 +47,7 @@ public class matryoshikassinners_Items {
 		ItemList.add(ZombieSoul = new ZombieSoul(SOUL).setCreativeTab(matryoshikassinners.MatryoshikaTab));
 		ItemList.add(AnimalSoul = new AnimalSoul(SOUL).setCreativeTab(matryoshikassinners.MatryoshikaTab));
 		ItemList.add(BuffMobSoul = new BuffMobSoul(SOUL).setCreativeTab(matryoshikassinners.MatryoshikaTab));
+		ItemList.add(SoulVortex = new ItemSoulVortex(SOUL).setCreativeTab(matryoshikassinners.MatryoshikaTab));
 		
 		for(Item Item:ItemList){
 			GameRegistry.registerItem(Item,  Item.getUnlocalizedName());
